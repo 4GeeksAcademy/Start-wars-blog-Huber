@@ -69,7 +69,7 @@ export const Characters = () => {
                                     <div className="card bg-secondary text-light m-2" style={{ minWidth: "200px" }} key={starship.uid}>
                                         <CardStarship 
                                             img3={
-                                                starship.uid === "1"
+                                                starship.uid === "2"
                                                 ? "https://starwars-visualguide.com/assets/img/big-placeholder.jpg"
                                                 : `https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`
                                             }

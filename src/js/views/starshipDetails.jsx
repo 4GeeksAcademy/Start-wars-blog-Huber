@@ -10,7 +10,7 @@ export const StarshipDetails = () => {
     const params = useParams()
 
     useEffect(() => {
-            actions.getStarshipDetails(params.id)
+            actions.getstarshipDetails(params.id)
     }, []);
 
     return (
@@ -24,8 +24,8 @@ export const StarshipDetails = () => {
 						alt={store.starshipDetails.uid} />
                         </div>
                         <div className="col-md-6 text-center d-flex flex-column justify-content-center">
-                    <h1>{store.specificCharacter.name}</h1>
-                    <p>{store.specificCharacter.name}</p>
+                    <h1>{store.starshipDetails.name}</h1>
+                    <p>{store.starshipDetails.name}</p>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Asperiores eaque exercitationem numquam architecto tenetur fugit praesentium sunt iste eos,
@@ -37,7 +37,7 @@ export const StarshipDetails = () => {
                 <div className="row py-5">
                 <div className="col">
                     <p><strong>Name</strong></p>
-                    <p>{store.specificCharacter.name}</p>
+                    <p>{store.starshipDetails.name}</p>
                 </div>
                 <div className="col">
                     <p><strong>Birth Year</strong></p>

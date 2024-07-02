@@ -10,7 +10,7 @@ export const SpecificPlanet = () => {
 
     useEffect(() => {
             actions.getSpecificPlanet(params.id)
-    }, []);
+    }, [uid]);
     
     if (!store.specificPlanet) {
         return <p>Loading planet...</p>;
