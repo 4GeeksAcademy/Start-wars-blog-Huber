@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			getSpecificCharacter: async (id) => {
-				setStore({ specificCharacter: null }) // Restablecezco el estado antes de la nueva solicitud
+				setStore({ specificCharacter: null }) 
 				try {
 					const response = await fetch(`https://www.swapi.tech/api/people/${id}`)
 					if (!response.ok) {
@@ -49,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			getSpecificPlanet: async (id) => {
-				setStore({ specificPlanet: null }) // Restablecezco el estado antes de la nueva solicitud
+				setStore({ specificPlanet: null }) 
 				try {
 					const response = await fetch(`https://www.swapi.tech/api/planets/${id}`)
 					if (!response.ok) {
@@ -70,7 +70,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const newDelete = getStore().favorites.filter(favorite => favorite.uid !== uid || favorite.type !== type);
 				setStore({ favorites: newDelete });
 			},
-			// NO FUNCIONA
+			
 			deleteFavoriteCharacter: async (id) => {
 				try {
 					const response = await fetch(`https://www.swapi.tech/api/people/${id}`, {

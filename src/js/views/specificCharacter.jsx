@@ -41,23 +41,23 @@ export const SpecificCharacter = () => {
                 </div>
                 <div className="col">
                     <p><strong>Birth Year</strong></p>
-                    <p>{store.specificCharacter.name}</p>
+                    <p>{store.specificCharacter.birth_year}</p>
                 </div>
                 <div className="col">
                     <p><strong>Gender</strong></p>
-                    <p>{store.specificCharacter.name}</p>
+                    <p>{store.specificCharacter.gender}</p>
                 </div>
                 <div className="col">
                     <p><strong>Height</strong></p>
-                    <p>{store.specificCharacter.name}</p>
+                    <p>{store.specificCharacter.height}</p>
                 </div>
                 <div className="col">
                     <p><strong>Skin Color</strong></p>
-                    <p>{store.specificCharacter.name}</p>
+                    <p>{store.specificCharacter.skin_color}</p>
                 </div>
                 <div className="col">
                     <p><strong>Eye Color</strong></p>
-                    <p>{store.specificCharacter.namer}</p>
+                    <p>{store.specificCharacter.eye_color}</p>
                 </div>
             </div>
                     </div>
