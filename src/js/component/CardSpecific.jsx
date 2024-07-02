@@ -1,41 +1,45 @@
-import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
+import React from "react"
 
-export const CardPlanet = ({img2, title2, link2, planetId}) => {
-    const {store, actions} = useContext(Context)
-   
-    const handleAddFavorite = () => {
-		const planet = store.planets.find(planet => planet.uid === planetId);
-		if (planet) {
-			actions.addFavorite(planet, 'planet');
-		}
-	};
+export const CardSpecificCharacter = ({ img, text, title, name, birthYear, gender, height, skinColor, EyeColor}) => {
 
-    return (
+    
+    return(
         <React.Fragment>
-            <div className="card" style={{width: "18rem"}}>
-                <img src={img2} className="card-img-top" />
-                <div className="card-body">
-                    <h5 className="card-title">{title2}</h5>
-                    <div className="d-flex mt-3">
-                        <Link 
-                            to={`/demo2/${planetId}`}
-                            href={link2} 
-                            className="btn btn-primary"
-                        >
-                                Learn more!
-                        </Link>
-                        <button 
-                            type="button" 
-                            className="btn"
-                            onClick={handleAddFavorite}
-                        >
-                                🖤
-                        </button>
+                <div className="imgPlanet d-flex">
+                        <img src={img} />       
+                    <div className="titleTextPlanet ms-5">
+                        <h5>{title}</h5>
+                        <p>{text}</p>
                     </div>
                 </div>
-            </div>
-    </React.Fragment>
+                <div className="stickPlanet">
+                </div>
+                <div className="infoPlanet d-flex">
+                    <div>
+                        <h6><strong>name</strong></h6>
+                        <h6>{name}</h6>
+                    </div>
+                    <div>
+                        <h6><strong>Birth Year</strong></h6>
+                        <h6>{birthYear}</h6>
+                    </div>
+                    <div>
+                        <h6><strong>Gender</strong></h6>
+                        <h6>{gender}</h6>
+                    </div>
+                    <div>
+                        <h6><strong>Height</strong></h6>
+                        <h6>{height}</h6>
+                    </div>
+                    <div>
+                        <h6><strong>Skin Color</strong></h6>
+                        <h6>{skinColor}</h6>
+                    </div>
+                    <div>
+                        <h6><strong>Eye Color</strong></h6>
+                        <h6>{EyeColor}</h6>
+                    </div> 
+                </div>
+        </React.Fragment>
     )
 }

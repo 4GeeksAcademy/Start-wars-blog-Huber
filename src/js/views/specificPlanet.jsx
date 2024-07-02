@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom";
 
 
 export const SpecificPlanet = () => {
-    const {store, actions} = useContext(Context)
-    const { id } = useParams();
-    
-    useEffect(() =>{
-            actions.getSpecificPlanet(id)
-    }, [id])
+    const { store, actions } = useContext(Context);
+    const params = useParams()
+
+    useEffect(() => {
+            actions.getSpecificPlanet(params.id)
+    }, []);
     
     if (!store.specificPlanet) {
         return <p>Loading planet...</p>;
@@ -19,24 +19,51 @@ export const SpecificPlanet = () => {
     return (
         <React.Fragment>
             <div>
-            {store.specificCharacter ? (
-                <div className="container">
-                    <div className="cardSpecificCharacter col-4">
-                        <CardSpecificPlanet 
-                       img={
-                        store.specificPlanet.uid
-                            ? `https://starwars-visualguide.com/assets/img/characters/${store.specificPlanet.uid}.jpg`
-                            : "https://starwars-visualguide.com/assets/img/big-placeholder.jpg"
-                    }
-                        title={store.specificPlanet.name}
-                        text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Maecenas sit amet blandit urna. Praesent vel nunc a lacus vestibulum volutpat. Donec quis dolor nec ipsum tempor blandit vel a odio."}
-                        name={store.specificPlanet.name}
-                        climate={store.specificPlanet.climate}
-                        population={store.specificPlanet.population}
-                        orbitalPeriod={store.specificPlanet.orbital_period}
-                        rotationPeriod={store.specificPlanet.rotation_period}
-                        diameter={store.specificPlanet.diameter}
-                        />
+            {store.specificPlanet ? (
+                <div className="container-fluid   d-flex flex-column justify-content-center" style={{ minHeight: "100vh" }}>
+                    <div className="row border-bottom border-2 pb-4 border-danger py-5">
+                    <div className="col-md-6">
+                        < img className="img-fluid rounded"
+						src={"https://starwars-visualguide.com/assets/img/planets/" + (params.id) + ".jpg"}
+						alt={store.specificPlanet.uid} />
+                    </div>
+                    <div className="col-md-6 text-center d-flex flex-column justify-content-center">
+                    <h1>{store.specificPlanet.name}</h1>
+                    <p>{store.specificPlanet.name}</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Asperiores eaque exercitationem numquam architecto tenetur fugit praesentium sunt iste eos,
+                        delectus minima saepe quam impedit obcaecati maiores,
+                        voluptatum cupiditate quibusdam.
+                        Tenetur.
+                    </p>
+                </div>
+                <div className="row py-5">
+                <div className="col">
+                    <p><strong>Name</strong></p>
+                    <p>{store.specificPlanet.name}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Diameter</strong></p>
+                    <p>{store.specificPlanet.diameter}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Climate</strong></p>
+                    <p>{store.specificPlanet.climate}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Population</strong></p>
+                    <p>{store.specificPlanet.population}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Orbital Period</strong></p>
+                    <p>{store.specificPlanet.orbital_period}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Rotation period</strong></p>
+                    <p>{store.specificPlanet.rotation_period}</p>
+                </div>
+            </div>
                     </div>
                 </div>
             ) : (

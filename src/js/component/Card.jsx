@@ -4,16 +4,17 @@ import { Link } from "react-router-dom"
 
 export const Card = ({img, title, link, characterId }) => { 
     const {store, actions} = useContext(Context)
+    
 
     const handleAddFavorite = () => {
 		const character = store.characters.find(char => char.uid === characterId);
 		if (character) {
-			actions.addFavorite(character, 'character'); // para indicar que el elemento que se está añadiendo como favorito es un personaj
+			actions.addFavorite(character, 'character'); 
 		}
 	};
 
     return (
-        <div className="card d-flex" style={{ minWidth: "200px" }}>
+        <div className="card d-flex" style={{ width: "18rem" }}>
             <img src={img} className="card-img-top" />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
@@ -27,10 +28,10 @@ export const Card = ({img, title, link, characterId }) => {
                         </Link>
                         <button 
                         type="button" 
-                        className="btn"
+                        className=  "btn-outline-warning"
                         onClick={handleAddFavorite}
                         >
-                            🖤
+                            <i className="fas fa-heart  "></i>
                         </button>
                     </div>
                 </div>

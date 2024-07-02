@@ -7,34 +7,59 @@ import { useParams } from "react-router-dom";
 
 export const SpecificCharacter = () => {
     const { store, actions } = useContext(Context);
-    const { id } = useParams();
+    const params = useParams()
 
     useEffect(() => {
-            actions.getSpecificCharacter(id);
+            actions.getSpecificCharacter(params.id)
     }, []);
 
     return (
         <React.Fragment>
             {store.specificCharacter ? (
-                <div className="container">
-                    <div className="row">
-                        <div className="cardSpecificCharacter col-4">
-                            <CardSpecificCharacter
-                               img={
-                                store.specificCharacter.uid
-                                ? `https://starwars-visualguide.com/assets/img/planets/${store.specificCharacter.uid}.jpg`
-                                : "https://starwars-visualguide.com/assets/img/big-placeholder.jpg" 
-                            }
-                               title={store.specificCharacter.name}
-                               text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Maecenas sit amet blandit urna. Praesent vel nunc a lacus vestibulum volutpat. Donec quis dolor nec ipsum tempor blandit vel a odio."}
-                               name={store.specificCharacter.name}
-                               birthYear={store.specificCharacter.birth_year}
-                               gender={store.specificCharacter.gender}
-                               height={store.specificCharacter.height}
-                               skinColor={store.specificCharacter.skin_color}
-                               EyeColor={store.specificCharacter.eye_color}
-                            />
+                 <div className="container-fluid   d-flex flex-column justify-content-center" style={{ minHeight: "100vh" }}>
+                    <div className="row border-bottom border-2 pb-4 border-danger py-5">
+                        <div className="col-md-6">
+                        < img className="img-fluid rounded"
+						src={"https://starwars-visualguide.com/assets/img/characters/" + (params.id) + ".jpg"}
+						alt={store.specificCharacter.uid} />
                         </div>
+                        <div className="col-md-6 text-center d-flex flex-column justify-content-center">
+                    <h1>{store.specificCharacter.name}</h1>
+                    <p>{store.specificCharacter.name}</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Asperiores eaque exercitationem numquam architecto tenetur fugit praesentium sunt iste eos,
+                        delectus minima saepe quam impedit obcaecati maiores,
+                        voluptatum cupiditate quibusdam.
+                        Tenetur.
+                    </p>
+                </div>
+                <div className="row py-5">
+                <div className="col">
+                    <p><strong>Name</strong></p>
+                    <p>{store.specificCharacter.name}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Birth Year</strong></p>
+                    <p>{store.specificCharacter.name}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Gender</strong></p>
+                    <p>{store.specificCharacter.name}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Height</strong></p>
+                    <p>{store.specificCharacter.name}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Skin Color</strong></p>
+                    <p>{store.specificCharacter.name}</p>
+                </div>
+                <div className="col">
+                    <p><strong>Eye Color</strong></p>
+                    <p>{store.specificCharacter.namer}</p>
+                </div>
+            </div>
                     </div>
                 </div>
             ) : (

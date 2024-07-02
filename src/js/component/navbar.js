@@ -15,7 +15,7 @@ export const Navbar = () => {
 	};
 	
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar mb-3">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1 ms-5">
 					<img 
@@ -25,27 +25,28 @@ export const Navbar = () => {
 					/>
 				</span>
 			</Link>
-			<div className="ml-auto">
+			<div className="navbar-nav ms-auto">
 				<div className="dropdown">
   					<button 
-					className="btn btn-primary dropdown-toggle" 
+					className="btn btn-secondary dropdown-toggle" 
 					type="button" 
 					data-bs-toggle="dropdown" 
 					aria-expanded="false">
-   	 					Dropdown button <span className="badge bg-secondary">{store.favorites.length}</span>
+   	 					Favorite <span className="badge bg-secondary">{store.favorites.length}</span>
   					</button>
-					  <ul className="dropdown-menu">
+					  <ul className="dropdown-menu dropdown-menu-end">
                         {store.favorites.length > 0 ? (
                             store.favorites.map((favorite, index) => (
                                 <li key={index}>
+                                    
                                     <a className="dropdown-item" href="#">
                                         {favorite.name}
 										<button 
 										type="button" 
-										className="btn" 
+										className="btn btn-outline-danger btn-sm"
 										onClick={() => handleDeleteFavorite(favorite.uid, favorite.type)}
 										>
-                            				<i className="fa-solid fa-trash"></i>
+                            				<i className="fas fa-trash-alt"></i>
                         				</button>
                                     </a>
                                 </li>
