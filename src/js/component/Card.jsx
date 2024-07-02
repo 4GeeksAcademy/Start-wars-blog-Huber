@@ -14,7 +14,7 @@ export const Card = ({img, title, link, characterId }) => {
 	};
 
     return (
-        <div className="card d-flex" style={{ width: "18rem" }}>
+        <div className="card bg-secondary text-light" style={{ minWidth: "200px" }}>
             <img src={img} className="card-img-top" />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
@@ -24,7 +24,7 @@ export const Card = ({img, title, link, characterId }) => {
                         href={link} 
                         className="btn btn-primary"
                         >
-                            Learn more!
+                            Details
                         </Link>
                         <button 
                         type="button" 

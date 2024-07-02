@@ -5,6 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			specificCharacter: null,
 			planets: [],
 			specificPlanet: null,
+			starship: [],
+			starshipDetails: null,
 			favorites: []
 		},
 		actions: {
@@ -62,6 +64,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error)
 				}
 			},
+
+			getstarship: async () => {
+				try{
+					const response = await fetch("https://www.swapi.tech/api/starships/")
+					if (!response.ok) {
+							throw new Error("Levante un error");
+						}
+					const data = await response.json()
+					setStore({ starship: data.results })
+					console.log(data.results)
+				} catch(error) {
+					console.log(error)
+				}
+			},
+			getstarshipDetails: async (id) => {
+				setStore({ starshipDetails: null }) 
+				try {
+					const response = await fetch(`https://www.swapi.tech/api/starships/${id}`)
+					if (!response.ok) {
+						throw new Error("Levante un error");
+					}
+					const data = await response.json()
+					setStore({ starshipDetails: data.result.properties})
+					console.log(data.result)
+				} catch(error) {
+					console.log(error)
+				}
+			},
+
+
 			addFavorite: (item, type) => {
                 const newFavorites = [...getStore().favorites, { ...item, type }];
                 setStore({ favorites: newFavorites });
