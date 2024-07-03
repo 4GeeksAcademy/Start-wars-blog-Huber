@@ -19,23 +19,12 @@ export const Card = ({img, title, link, characterId }) => {
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <div className="d-flex justify-content-between align-items-center">
-                        <Link 
-                        to={`/demo/${characterId}`}
-                        href={link} 
-                        className="btn btn-primary"
-                        >
-                            Details
-                        </Link>
-                        <button 
-                        type="button" 
-                        className=  "btn-outline-warning"
-                        onClick={handleAddFavorite}
-                        >
+                        <Link to={`/demo/${characterId}`} href={link} className="btn btn-primary"> Details </Link>
+                        <button type="button" className=  "btn-outline-warning"onClick={handleAddFavorite}>
                             <i className="fas fa-heart  "></i>
                         </button>
                     </div>
                 </div>
         </div>
-
     )
 }

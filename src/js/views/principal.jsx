@@ -16,7 +16,8 @@ export const Characters = () => {
     
     return (
         <React.Fragment>
-            <div className="overflow-auto mb-4">
+            <div className="container-fluid  py-5">
+            <h1 className="text-center mb-5">Star Wars Universe</h1>
             <div className="cards-container mt-3 g-2">
                 <h1>Characters</h1>
                 <div className="d-flex">

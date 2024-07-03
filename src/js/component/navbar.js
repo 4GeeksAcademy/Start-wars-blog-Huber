@@ -8,6 +8,8 @@ export const Navbar = () => {
     useEffect(() => {
             actions.getCharacters();
 			console.log(store.characters)
+		
+
     }, []);
 
 	const handleDeleteFavorite = (uid, type) => {
@@ -15,11 +17,11 @@ export const Navbar = () => {
 	};
 	
 	return (
-		<nav className="navbar mb-3">
+		<nav className="navbar navbar-expand-lg">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1 ms-5">
 					<img 
-						src="https://www.pngmart.com/files/3/Star-Wars-Logo-PNG-Photos.png" 
+						src="https://cdn.worldvectorlogo.com/logos/star-wars.svg" 
 						className="card-img-top" 
 						style={{maxWidth: "7rem", maxHeight: "7rem"}}
 					/>
