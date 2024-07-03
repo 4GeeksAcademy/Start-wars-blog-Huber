@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 
 
-export const SpecificCharacter = () => {
+export const Character = () => {
     const { store, actions } = useContext(Context);
     const params = useParams()
 

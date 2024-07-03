@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 
 
-export const SpecificPlanet = () => {
+export const Planet = () => {
     const { store, actions } = useContext(Context);
     const params = useParams()
 

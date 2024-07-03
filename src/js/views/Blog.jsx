@@ -63,7 +63,7 @@ export const Blog = () => {
                 </div>
 
                 <div className="cards-container mt-3 g-2">
-                    <h1>StarShip</h1>
+                    <h1>StarShips</h1>
                         <div className="d-flex">
                             {store.starship && store.starship.length > 0 ? (
                                 store.starship.map((starship) => (

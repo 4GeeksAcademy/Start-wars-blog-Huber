@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const StarshipDetails = () => {
+export const Starship = () => {
     const { store, actions } = useContext(Context);
     const { uid } = useParams();
 
@@ -63,4 +63,4 @@ const StarshipDetails = () => {
     );
 };
 
-export { StarshipDetails };
+

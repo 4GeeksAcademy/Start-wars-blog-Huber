@@ -3,11 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Blog } from "./views/Blog.jsx";
-import { SpecificCharacter } from "./views/specificCharacter.jsx";
-import { SpecificPlanet } from "./views/specificPlanet.jsx";
+import { Character } from "./views/Character.jsx";
+import { Planet } from "./views/Planet.jsx";
 import injectContext from "./store/appContext";
 
-import { StarshipDetails } from "./views/starshipDetails.jsx";
+import { Starship } from "./views/StarShips.jsx";
 
 import { Navbar } from "./component/navbar";
 
@@ -24,9 +24,9 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Blog />}/>
-						<Route path="/SCharacter/:id" element={<SpecificCharacter />} />
-						<Route path="/SPlanet/:id" element={<SpecificPlanet />} />
-						<Route path="/SStarShip/:id" element={<StarshipDetails />} />
+						<Route path="/SCharacter/:id" element={<Character />} />
+						<Route path="/SPlanet/:id" element={<Planet />} />
+						<Route path="/SStarShip/:id" element={<Starship />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 				</ScrollToTop>
