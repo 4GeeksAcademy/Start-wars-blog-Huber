@@ -64,7 +64,7 @@ export const Starship = () => {
                     </div>
                 </div>
             ) : (
-                <p>Loading planet...</p>
+                <p>Loading Starships...</p>
             )}
             </div>
         </React.Fragment>
