@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from "react";
+import { CardSpecificCharacter } from "../component/CardSpecific.jsx";
 import { Context } from "../store/appContext";
-import { CardSpecificPlanet } from "../component/CardSpecificPlanet.jsx";
 import { useParams } from "react-router-dom";
+
 
 
 export const SpecificPlanet = () => {
@@ -10,12 +11,8 @@ export const SpecificPlanet = () => {
 
     useEffect(() => {
             actions.getSpecificPlanet(params.id)
-    }, [uid]);
-    
-    if (!store.specificPlanet) {
-        return <p>Loading planet...</p>;
-    }
-    
+    }, []);
+
     return (
         <React.Fragment>
             <div>
@@ -24,8 +21,8 @@ export const SpecificPlanet = () => {
                     <div className="row border-bottom border-2 pb-4 border-danger py-5">
                     <div className="col-md-6">
                         < img className="img-fluid rounded"
-						src={"https://starwars-visualguide.com/assets/img/planets/" + (params.id) + ".jpg"}
-						alt={store.specificPlanet.uid} />
+                        src={"https://starwars-visualguide.com/assets/img/planets/" + (params.id) + ".jpg"}
+                        alt={store.specificPlanet.uid} />
                     </div>
                     <div className="col-md-6 text-center d-flex flex-column justify-content-center">
                     <h1>{store.specificPlanet.name}</h1>
@@ -71,5 +68,6 @@ export const SpecificPlanet = () => {
             )}
             </div>
         </React.Fragment>
-    )
-}
+
+    );
+};
