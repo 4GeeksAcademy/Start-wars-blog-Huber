@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			specificPlanet: null,
 			starship: [],
-			starshipDetails: null,
+			specificStarship: null,
 			favorites: []
 		},
 		actions: {
@@ -83,15 +83,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			getstarshipDetails: async (id) => {
-				setStore({ starshipDetails: null }) 
+			getSpicificStarship: async (id) => {
+				setStore({ specificStarship: null }) 
 				try {
 					const response = await fetch(`https://www.swapi.tech/api/starships/${id}`)
 					if (!response.ok) {
-						throw new Error("Levante un error");
+						throw new Error("Error");
 					}
 					const data = await response.json()
-					setStore({ starshipDetails: data.result.properties})
+					setStore({ specificStarship: data.result.properties})
 					console.log(data.result)
 				} catch(error) {
 					console.log(error)
