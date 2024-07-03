@@ -1,14 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
 import { Blog } from "./views/Blog.jsx";
 import { Character } from "./views/Character.jsx";
 import { Planet } from "./views/Planet.jsx";
-import injectContext from "./store/appContext";
-
 import { Starship } from "./views/StarShips.jsx";
-
+import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 
 //create your first component
