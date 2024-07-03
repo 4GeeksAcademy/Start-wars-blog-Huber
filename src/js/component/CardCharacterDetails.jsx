@@ -1,6 +1,6 @@
 import React from "react"
 
-export const CardSpecificCharacter = ({ img, text, title, name, birthYear, gender, height, skinColor, EyeColor}) => {
+export const CardCharacterDetails = ({ img, text, title, name, birthYear, gender, height, skinColor, EyeColor}) => {
 
     
     return(

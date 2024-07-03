@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import { Context } from "../store/appContext";
-import { Card } from "../component/Card.jsx";
+import { Context } from "../store/appContext.js";
+import { CardCharacter } from "../component/CardCharacter.jsx";
 import { CardPlanet } from "../component/CardPlanet.jsx";
 import { CardStarship } from "../component/CardStarShip.jsx";
 
-export const Characters = () => {
+export const Blog = () => {
     const {store, actions} = useContext(Context)
 
     useEffect(() => {
@@ -24,10 +24,10 @@ export const Characters = () => {
                     {store.characters && store.characters.length > 0 ? (
                         store.characters.map((character) => (
                             <div className="card bg-secondary text-light m-2" style={{ minWidth: "200px" }} key={character.uid}>
-                                <Card 
+                                <CardCharacter 
                                     img={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`}
                                     title={character.name}
-                                    link={`/specificCharacter/${character.uid}`}
+                                    link={`/SCharacter/${character.uid}`}
                                     characterId={character.uid}
                                 />
                             </div>
@@ -51,7 +51,7 @@ export const Characters = () => {
                                                 : `https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`
                                             }
                                             title2={planet.name}
-                                            link2={`/specificPlanet/${planet.uid}`}
+                                            link2={`/SPlanet/${planet.uid}`}
                                             planetId={planet.uid}
                                         />
                                     </div>
@@ -75,7 +75,7 @@ export const Characters = () => {
                                                 : `https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`
                                             }
                                             title3={starship.name}
-                                            link3={`/StarshipDetails/${starship.uid}`}
+                                            link3={`/SStarship/${starship.uid}`}
                                             starshiptId={starship.uid}
                                         />
                                     </div>

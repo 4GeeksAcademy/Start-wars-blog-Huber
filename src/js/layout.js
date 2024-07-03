@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Characters } from "./views/principal.jsx";
+import { Blog } from "./views/Blog.jsx";
 import { SpecificCharacter } from "./views/specificCharacter.jsx";
 import { SpecificPlanet } from "./views/specificPlanet.jsx";
 import injectContext from "./store/appContext";
@@ -23,10 +23,10 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
-						<Route path="/" element={<Characters />}/>
-						<Route path="/demo/:id" element={<SpecificCharacter />} />
-						<Route path="/demo2/:id" element={<SpecificPlanet />} />
-						<Route path="/demo3/:id" element={<StarshipDetails />} />
+						<Route path="/" element={<Blog />}/>
+						<Route path="/SCharacter/:id" element={<SpecificCharacter />} />
+						<Route path="/SPlanet/:id" element={<SpecificPlanet />} />
+						<Route path="/SStarShip/:id" element={<StarshipDetails />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 				</ScrollToTop>

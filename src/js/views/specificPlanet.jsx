@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import { CardSpecificCharacter } from "../component/CardSpecific.jsx";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CardSpecificStarship = ({img, title, text, name, climate, population, orbitalPeriod, rotationPeriod, diameter}) => {
+export const CardStarshipDetails = ({img, title, text, name, climate, population, orbitalPeriod, rotationPeriod, diameter}) => {
     return (
         <React.Fragment>
             <div className="imgPlanet d-flex">
