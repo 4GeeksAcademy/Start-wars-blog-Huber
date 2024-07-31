@@ -9,22 +9,22 @@ export const Character = () => {
     const params = useParams()
 
     useEffect(() => {
-            actions.getSpecificCharacter(params.id)
+            actions.getDetailsCharacter(params.id)
     }, []);
 
     return (
         <React.Fragment>
-            {store.specificCharacter ? (
+            {store.detailsCharacter ? (
                  <div className="container-fluid   d-flex flex-column justify-content-center" style={{ minHeight: "100vh" }}>
                     <div className="row border-bottom border-2 pb-4 border-danger py-5">
                         <div className="col-md-6">
                         < img className="img-fluid rounded"
 						src={"https://starwars-visualguide.com/assets/img/characters/" + (params.id) + ".jpg"}
-						alt={store.specificCharacter.uid} />
+						alt={store.detailsCharacter.uid} />
                         </div>
                         <div className="col-md-6 text-center d-flex flex-column justify-content-center">
-                    <h1>{store.specificCharacter.name}</h1>
-                    <p>{store.specificCharacter.name}</p>
+                    <h1>{store.detailsCharacter.name}</h1>
+                    <p>{store.detailsCharacter.name}</p>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Asperiores eaque exercitationem numquam architecto tenetur fugit praesentium sunt iste eos,
@@ -36,27 +36,27 @@ export const Character = () => {
                 <div className="row py-5">
                 <div className="col">
                     <p><strong>Name</strong></p>
-                    <p>{store.specificCharacter.name}</p>
+                    <p>{store.detailsCharacter.name}</p>
                 </div>
                 <div className="col">
                     <p><strong>Birth Year</strong></p>
-                    <p>{store.specificCharacter.birth_year}</p>
+                    <p>{store.detailsCharacter.birth_year}</p>
                 </div>
                 <div className="col">
                     <p><strong>Gender</strong></p>
-                    <p>{store.specificCharacter.gender}</p>
+                    <p>{store.detailsCharacter.gender}</p>
                 </div>
                 <div className="col">
                     <p><strong>Height</strong></p>
-                    <p>{store.specificCharacter.height}</p>
+                    <p>{store.detailsCharacter.height}</p>
                 </div>
                 <div className="col">
                     <p><strong>Skin Color</strong></p>
-                    <p>{store.specificCharacter.skin_color}</p>
+                    <p>{store.detailsCharacter.skin_color}</p>
                 </div>
                 <div className="col">
                     <p><strong>Eye Color</strong></p>
-                    <p>{store.specificCharacter.eye_color}</p>
+                    <p>{store.detailsCharacter.eye_color}</p>
                 </div>
             </div>
                     </div>

@@ -13,14 +13,14 @@ export const CardPlanet = ({img2, title2, link2, planetId}) => {
 
     return (
         <React.Fragment>
-            <div className="card bg-secondary text-light" style={{ minWidth: "200px" }}>
+            <div className="card bg-secondary bg-dark text-light" style={{ minWidth: "200px" }}>
                 <img src={img2} className="card-img-top" />
                 <div className="card-body">
                     <h5 className="card-title">{title2}</h5>
                     <div className="d-flex justify-content-between align-items-center">
-                        <Link to={`/SPlanet/${planetId}`} href={link2} className="btn btn-primary"> Details </Link>
-                        <button type="button" className="btn-outline-warning" onClick={handleAddFavorite}>
-                            <i className="fas fa-heart  "></i>
+                        <Link to={`/SPlanet/${planetId}`} href={link2} className="btn btn-warning "> Details </Link>
+                        <button type="button" className="btn-outline-warning  bg-danger" onClick={handleAddFavorite}>
+                            <i className="fas fa-star  "></i>
                         </button>
                     </div>
                 </div>

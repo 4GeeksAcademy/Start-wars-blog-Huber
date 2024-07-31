@@ -11,14 +11,14 @@ export const CardCharacter = ({img, title, link, characterId }) => {
 		}
 	};
     return (
-        <div className="card bg-secondary text-light" style={{ minWidth: "200px" }}>
+        <div className="card bg-secondary bg-dark text-light" style={{ minWidth: "200px" }}>
             <img src={img} className="card-img-top" />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <div className="d-flex justify-content-between align-items-center">
-                        <Link to={`/SCharacter/${characterId}`} href={link} className="btn btn-primary"> Details </Link>
-                        <button type="button" className=  "btn-outline-warning"onClick={handleAddFavorite}>
-                            <i className="fas fa-heart  "></i>
+                        <Link to={`/SCharacter/${characterId}`} href={link} className="btn btn-warning"> Details </Link>
+                        <button type="button" className=  "btn-outline-warning  bg-danger"onClick={handleAddFavorite}>
+                            <i className="fas fa-star  "></i>
                         </button>
                     </div>
                 </div>

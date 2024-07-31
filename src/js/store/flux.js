@@ -2,11 +2,9 @@ const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
 			characters: [],
-			specificCharacter: null,
+			detailsCharacter: null,
 			planets: [],
-			specificPlanet: null,
-			starship: [],
-			specificStarship: null,
+			detailsPlanet: null,
 			favorites: []
 		},
 		actions: {
@@ -25,15 +23,15 @@ const getState = ({ getStore, setStore }) => {
 				}
 			},
 
-			getSpecificCharacter: async (id) => {
-				setStore({ specificCharacter: null }) 
+			getDetailsCharacter: async (id) => {
+				setStore({ detailsCharacter: null }) 
 				try {
 					const response = await fetch(`https://www.swapi.tech/api/people/${id}`)
 					if (!response.ok) {
 						throw new Error("Error")
 					}
 					const data = await response.json()
-					setStore({ specificCharacter: data.result.properties})
+					setStore({ detailsCharacter: data.result.properties})
 					console.log(data.result)
 				} catch(error) {
 					console.log(error)
@@ -54,49 +52,22 @@ const getState = ({ getStore, setStore }) => {
 				}
 			},
 
-			getSpecificPlanet: async (id) => {
-				setStore({ specificPlanet: null }) 
+			getDetailsPlanet: async (id) => {
+				setStore({ detailsPlanet: null }) 
 				try {
 					const response = await fetch(`https://www.swapi.tech/api/planets/${id}`)
 					if (!response.ok) {
 						throw new Error("Error");
 					}
 					const data = await response.json()
-					setStore({ specificPlanet: data.result.properties})
+					setStore({ detailsPlanet: data.result.properties})
 					console.log(data.result)
 				} catch(error) {
 					console.log(error)
 				}
 			},
 
-			getstarship: async () => {
-				try{
-					const response = await fetch("https://www.swapi.tech/api/starships/")
-					if (!response.ok) {
-							throw new Error("Error");
-						}
-					const data = await response.json()
-					setStore({ starship: data.results })
-					console.log(data.results)
-				} catch(error) {
-					console.log(error)
-				}
-			},
-
-			getSpicificStarship: async (id) => {
-				setStore({ specificStarship: null }) 
-				try {
-					const response = await fetch(`https://www.swapi.tech/api/starships/${id}`)
-					if (!response.ok) {
-						throw new Error("Error");
-					}
-					const data = await response.json()
-					setStore({ specificStarship: data.result.properties})
-					console.log(data.result)
-				} catch(error) {
-					console.log(error)
-				}
-			},
+			
 
 			addFavorite: (item, type) => {
                 const newFavorites = [...getStore().favorites, { ...item, type }];
